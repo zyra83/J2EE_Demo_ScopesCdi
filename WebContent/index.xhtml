@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h1>Bean ApplicationScope : #{BeanApplicationScope}</h1>
+	
+	<p>
+		Les scopes CDI donnent un contôle sur la durée de vie des objets qui vont participer au rendu de notre page.
+	</p>
+
+	<ul>
+
+		<li>beanApplicationScope : <h:outputText
+				value="#{beanApplicationScope}" />
+		</li>
+
+
+		<li>beanSessionScope : <h:outputText value="#{beanSessionScope}" />
+		</li>
+
+
+		<li>beanViewScope : <h:outputText value="#{beanViewScope}" />
+		</li>
+
+
+		<li>beanRequestScope1 : <h:outputText value="#{beanRequestScope}" />
+		</li>
+
+		<li>
+		beanRequestScope2 : <h:outputText value="#{beanRequestScope}" />
+		</li>
+
+		<li>beanDependentScope1 : <h:outputText
+				value="#{beanDependentScope}" />
+		</li>
+		<li>beanDependentScope2 : <h:outputText
+				value="#{beanDependentScope}" />
+		</li>
+
+		<p>
+			Application scoped : généré au démarrage de l'application, toute la
+			durée de vue de l'appli, reste là. instance partagée <br /> Session
+			Scoped : pour toute la session de l'utilisateur (lancer la navigation
+			privée pour tester) <br /> View Scoped : tant qu'on reste sur un
+			formulaire, ne bouge pas (soumettre le form pour tester). <br />
+			Request Scoped : l'objet reste le même durant la requête <br />
+			BeanDependant : un objet généré à chaque solicitation
+		</p>
+
+	</ul>
+
+	<h:form>
+		<h:commandButton value="Soumettre mais rester sur la vue (page)" />
+	</h:form>
+
+</body>
+</html>
